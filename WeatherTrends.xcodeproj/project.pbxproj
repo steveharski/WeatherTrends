@@ -11,34 +11,25 @@
 		5FAFE5B91FE2FF4100FF527A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FAFE5B71FE2FF4100FF527A /* Main.storyboard */; };
 		5FAFE5BB1FE2FF4100FF527A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FAFE5BA1FE2FF4100FF527A /* Assets.xcassets */; };
 		5FAFE5BE1FE2FF4100FF527A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FAFE5BC1FE2FF4100FF527A /* LaunchScreen.storyboard */; };
-		5FAFE5CE1FE2FF9800FF527A /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FAFE5CB1FE2FF6F00FF527A /* Charts.framework */; };
-		5FAFE5CF1FE2FF9800FF527A /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FAFE5CB1FE2FF6F00FF527A /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FAFE5D41FE3002700FF527A /* BarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAFE5D31FE3002700FF527A /* BarChartViewController.swift */; };
 		5FAFE5D61FE303EB00FF527A /* MetOfficeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAFE5D51FE303EB00FF527A /* MetOfficeAPI.swift */; };
 		5FAFE5DA1FE30C1500FF527A /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAFE5D91FE30C1500FF527A /* WeatherData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5FAFE5CA1FE2FF6F00FF527A /* PBXContainerItemProxy */ = {
+		5F6B53FA1FE335B60045CCE4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5FAFE5C51FE2FF6F00FF527A /* Charts.xcodeproj */;
+			containerPortal = 5F6B53F51FE335B60045CCE4 /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
 			remoteInfo = Charts;
 		};
-		5FAFE5CC1FE2FF6F00FF527A /* PBXContainerItemProxy */ = {
+		5F6B53FC1FE335B60045CCE4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5FAFE5C51FE2FF6F00FF527A /* Charts.xcodeproj */;
+			containerPortal = 5F6B53F51FE335B60045CCE4 /* Charts.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
 			remoteInfo = ChartsTests;
-		};
-		5FAFE5D01FE2FF9800FF527A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5FAFE5C51FE2FF6F00FF527A /* Charts.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = A58A4ED274A941CA248EA921;
-			remoteInfo = Charts;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -49,7 +40,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5FAFE5CF1FE2FF9800FF527A /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,13 +47,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F6B53F51FE335B60045CCE4 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5FAFE5B01FE2FF4100FF527A /* WeatherTrends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTrends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FAFE5B31FE2FF4100FF527A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FAFE5B81FE2FF4100FF527A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5FAFE5BA1FE2FF4100FF527A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FAFE5BD1FE2FF4100FF527A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FAFE5BF1FE2FF4100FF527A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5FAFE5C51FE2FF6F00FF527A /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../../Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		5FAFE5D31FE3002700FF527A /* BarChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewController.swift; sourceTree = "<group>"; };
 		5FAFE5D51FE303EB00FF527A /* MetOfficeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetOfficeAPI.swift; sourceTree = "<group>"; };
 		5FAFE5D91FE30C1500FF527A /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
@@ -74,13 +64,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FAFE5CE1FE2FF9800FF527A /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F6B53F61FE335B60045CCE4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F6B53FB1FE335B60045CCE4 /* Charts.framework */,
+				5F6B53FD1FE335B60045CCE4 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5FAFE5A71FE2FF4100FF527A = {
 			isa = PBXGroup;
 			children = (
@@ -106,18 +104,9 @@
 				5FAFE5D51FE303EB00FF527A /* MetOfficeAPI.swift */,
 				5FAFE5D91FE30C1500FF527A /* WeatherData.swift */,
 				5FAFE5BF1FE2FF4100FF527A /* Info.plist */,
-				5FAFE5C51FE2FF6F00FF527A /* Charts.xcodeproj */,
+				5F6B53F51FE335B60045CCE4 /* Charts.xcodeproj */,
 			);
 			path = WeatherTrends;
-			sourceTree = "<group>";
-		};
-		5FAFE5C61FE2FF6F00FF527A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5FAFE5CB1FE2FF6F00FF527A /* Charts.framework */,
-				5FAFE5CD1FE2FF6F00FF527A /* ChartsTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		5FAFE5D81FE304A700FF527A /* Supporting Files */ = {
@@ -145,7 +134,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				5FAFE5D11FE2FF9800FF527A /* PBXTargetDependency */,
 			);
 			name = WeatherTrends;
 			productName = WeatherTrends;
@@ -181,8 +169,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 5FAFE5C61FE2FF6F00FF527A /* Products */;
-					ProjectRef = 5FAFE5C51FE2FF6F00FF527A /* Charts.xcodeproj */;
+					ProductGroup = 5F6B53F61FE335B60045CCE4 /* Products */;
+					ProjectRef = 5F6B53F51FE335B60045CCE4 /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -193,18 +181,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		5FAFE5CB1FE2FF6F00FF527A /* Charts.framework */ = {
+		5F6B53FB1FE335B60045CCE4 /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Charts.framework;
-			remoteRef = 5FAFE5CA1FE2FF6F00FF527A /* PBXContainerItemProxy */;
+			remoteRef = 5F6B53FA1FE335B60045CCE4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5FAFE5CD1FE2FF6F00FF527A /* ChartsTests.xctest */ = {
+		5F6B53FD1FE335B60045CCE4 /* ChartsTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ChartsTests.xctest;
-			remoteRef = 5FAFE5CC1FE2FF6F00FF527A /* PBXContainerItemProxy */;
+			remoteRef = 5F6B53FC1FE335B60045CCE4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -235,14 +223,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5FAFE5D11FE2FF9800FF527A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Charts;
-			targetProxy = 5FAFE5D01FE2FF9800FF527A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5FAFE5B71FE2FF4100FF527A /* Main.storyboard */ = {
