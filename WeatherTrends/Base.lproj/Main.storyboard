@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iP0-v5-nUo">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bar Chart View Controller-->
+        <scene sceneID="MTG-Qb-1mq">
+            <objects>
+                <viewController id="iP0-v5-nUo" customClass="BarChartViewController" customModule="WeatherTrends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ejv-W8-l0M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5w-8o-qL5" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="I5w-8o-qL5" firstAttribute="leading" secondItem="yUG-Mc-lf4" secondAttribute="leading" id="52e-7Z-6VX"/>
+                            <constraint firstItem="yUG-Mc-lf4" firstAttribute="bottom" secondItem="I5w-8o-qL5" secondAttribute="bottom" id="G2Z-gP-kCv"/>
+                            <constraint firstItem="yUG-Mc-lf4" firstAttribute="trailing" secondItem="I5w-8o-qL5" secondAttribute="trailing" id="XeU-E1-ziL"/>
+                            <constraint firstItem="I5w-8o-qL5" firstAttribute="top" secondItem="yUG-Mc-lf4" secondAttribute="top" id="a7F-BK-dBd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yUG-Mc-lf4"/>
+                    </view>
+                    <connections>
+                        <outlet property="barChart" destination="I5w-8o-qL5" id="blM-sv-zwa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="USt-Jd-ULN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-291" y="77"/>
+        </scene>
+    </scenes>
+</document>
