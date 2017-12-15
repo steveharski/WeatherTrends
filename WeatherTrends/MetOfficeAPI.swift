@@ -8,6 +8,15 @@
 
 import UIKit
 
+enum WeatherResult {
+    case success(String)
+    case failure(Error)
+}
+
+enum WeatherError: Error {
+    case weatherCreationError
+}
+
 class MetOfficeAPI {
     
     private let session: URLSession = {
@@ -15,33 +24,33 @@ class MetOfficeAPI {
         return URLSession(configuration: config)
     }()
     
-   // var weatherHistoryData = WeatherData()
     
-    func fetchWeatherHistory() {
-        let url = URL(string: "https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/bradforddata.txt")
+    func fetchWeather(for city: String, completion: @escaping (WeatherResult) -> Void) {
+        // city = "bradford"
+        let url = URL(string: "https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/\(city.lowercased())data.txt")
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
         
         let task = session.dataTask(with: request) {
             (data, response, error) in
-            if error != nil {
-                print(error as Any)
-            } else {
-                if data != nil {
-                    self.keepDoingStaff(with: data!)
-                }
-            }
+            
+            let result = self.processWeatherRequest(data: data, error: error)
+            completion(result)
         }
         task.resume()
     }
     
-    
-    func keepDoingStaff(with data: Data) {
-        if let weatherDataString = String(data: data, encoding: .utf8) {
-            print("Success")
-            print(weatherDataString)
-           // weatherHistoryData.breakDataByComponents(from: weatherDataString)
+    func processWeatherRequest(data: Data?, error: Error?) -> WeatherResult {
+        guard let weatherData = data, let weather = String(data: weatherData, encoding: .utf8) else {
+            // Couldn't create a weather data
+            if data == nil {
+                return .failure(error!)
+            } else {
+                return .failure(WeatherError.weatherCreationError)
+            }
         }
+        return .success(weather)
     }
+    
     
 }

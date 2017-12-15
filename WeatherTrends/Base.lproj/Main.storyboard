@@ -1,15 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iP0-v5-nUo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sh9-RF-ySZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Weather Trends-->
+        <scene sceneID="d9J-EH-H88">
+            <objects>
+                <viewController id="RgF-0I-m0t" customClass="MapViewController" customModule="WeatherTrends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vt0-lc-XnZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UK_map(1).png" translatesAutoresizingMaskIntoConstraints="NO" id="G7V-Jk-gKl">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a location from the map" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nmE-hT-O9U">
+                                <rect key="frame" x="0.0" y="643" width="375" height="24"/>
+                                <color key="textColor" red="0.061270621827411165" green="0.0091655220025981966" blue="0.0005293649088306925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFp-12-udT">
+                                <rect key="frame" x="262" y="357" width="71" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Bradford">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWeather:" destination="RgF-0I-m0t" eventType="touchUpInside" id="0Q0-ZB-d4t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jY1-wz-5fA">
+                                <rect key="frame" x="239" y="472" width="71" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Oxford">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWeather:" destination="RgF-0I-m0t" eventType="touchUpInside" id="g3m-Gz-1KJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="shX-k0-ybv" firstAttribute="trailing" secondItem="G7V-Jk-gKl" secondAttribute="trailing" id="4Tu-NU-xG9"/>
+                            <constraint firstItem="nmE-hT-O9U" firstAttribute="leading" secondItem="shX-k0-ybv" secondAttribute="leading" id="6In-ZI-oua"/>
+                            <constraint firstItem="shX-k0-ybv" firstAttribute="trailing" secondItem="nmE-hT-O9U" secondAttribute="trailing" id="7hP-we-mOw"/>
+                            <constraint firstItem="G7V-Jk-gKl" firstAttribute="leading" secondItem="shX-k0-ybv" secondAttribute="leading" id="NyH-oC-Twf"/>
+                            <constraint firstItem="nmE-hT-O9U" firstAttribute="bottom" secondItem="shX-k0-ybv" secondAttribute="bottom" id="Rtg-PU-MUc"/>
+                            <constraint firstItem="shX-k0-ybv" firstAttribute="bottom" secondItem="G7V-Jk-gKl" secondAttribute="bottom" id="dbM-ky-tCu"/>
+                            <constraint firstItem="G7V-Jk-gKl" firstAttribute="top" secondItem="shX-k0-ybv" secondAttribute="top" id="lVl-93-ulJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="shX-k0-ybv"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Weather Trends" id="BKQ-lL-Pmo"/>
+                    <connections>
+                        <segue destination="mez-Ph-Iyp" kind="show" identifier="showHistory" id="MVB-re-byi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tKI-dW-83D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="43.628185907046479"/>
+        </scene>
         <!--Bar Chart View Controller-->
         <scene sceneID="MTG-Qb-1mq">
             <objects>
@@ -38,7 +96,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USt-Jd-ULN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-291" y="77"/>
+            <point key="canvasLocation" x="1460" y="43.628185907046479"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="xVY-ue-Fg4">
+            <objects>
+                <viewController id="mez-Ph-Iyp" customClass="HistoryViewController" customModule="WeatherTrends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZBS-FL-iNu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xBS-gP-zFz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="9rY-Wz-I8q">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9rY-Wz-I8q" id="f2S-e7-Ehy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xBS-gP-zFz" firstAttribute="leading" secondItem="mZL-ZU-Cjj" secondAttribute="leading" id="0pY-ER-fRT"/>
+                            <constraint firstItem="mZL-ZU-Cjj" firstAttribute="bottom" secondItem="xBS-gP-zFz" secondAttribute="bottom" id="F1o-xG-hKw"/>
+                            <constraint firstItem="xBS-gP-zFz" firstAttribute="top" secondItem="mZL-ZU-Cjj" secondAttribute="top" id="ovx-AO-ShA"/>
+                            <constraint firstItem="mZL-ZU-Cjj" firstAttribute="trailing" secondItem="xBS-gP-zFz" secondAttribute="trailing" id="tmc-hE-HIH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mZL-ZU-Cjj"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="xBS-gP-zFz" id="HMq-yg-vxh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zmP-pZ-nfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752.79999999999995" y="43.628185907046479"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qZ4-rN-W3O">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sh9-RF-ySZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I6Q-7k-PnK">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RgF-0I-m0t" kind="relationship" relationship="rootViewController" id="U2S-AL-tvy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X0N-l4-B8o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-703" y="44"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="UK_map(1).png" width="290" height="396"/>
+    </resources>
 </document>
