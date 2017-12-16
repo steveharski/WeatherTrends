@@ -18,6 +18,8 @@
 		5FAFE5D41FE3002700FF527A /* BarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAFE5D31FE3002700FF527A /* BarChartViewController.swift */; };
 		5FAFE5D61FE303EB00FF527A /* MetOfficeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAFE5D51FE303EB00FF527A /* MetOfficeAPI.swift */; };
 		5FAFE5DA1FE30C1500FF527A /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAFE5D91FE30C1500FF527A /* WeatherData.swift */; };
+		5FBC15871FE519E8008DCCCE /* WeatherStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBC15861FE519E8008DCCCE /* WeatherStore.swift */; };
+		5FBC158B1FE52301008DCCCE /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBC158A1FE52301008DCCCE /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		5FAFE5D31FE3002700FF527A /* BarChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewController.swift; sourceTree = "<group>"; };
 		5FAFE5D51FE303EB00FF527A /* MetOfficeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetOfficeAPI.swift; sourceTree = "<group>"; };
 		5FAFE5D91FE30C1500FF527A /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		5FBC15861FE519E8008DCCCE /* WeatherStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStore.swift; sourceTree = "<group>"; };
+		5FBC158A1FE52301008DCCCE /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				5FAFE5D31FE3002700FF527A /* BarChartViewController.swift */,
 				5FAFE5B71FE2FF4100FF527A /* Main.storyboard */,
 				5FAFE5D51FE303EB00FF527A /* MetOfficeAPI.swift */,
+				5FBC15861FE519E8008DCCCE /* WeatherStore.swift */,
+				5FBC158A1FE52301008DCCCE /* Weather.swift */,
 				5FAFE5D91FE30C1500FF527A /* WeatherData.swift */,
 				5FAFE5BF1FE2FF4100FF527A /* Info.plist */,
 				5F6B53F51FE335B60045CCE4 /* Charts.xcodeproj */,
@@ -229,10 +235,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FBC158B1FE52301008DCCCE /* Weather.swift in Sources */,
 				5FAFE5B41FE2FF4100FF527A /* AppDelegate.swift in Sources */,
 				5FAFE5D41FE3002700FF527A /* BarChartViewController.swift in Sources */,
 				5FAFE5DA1FE30C1500FF527A /* WeatherData.swift in Sources */,
 				25573DE51FE3F9970031931F /* HistoryViewController.swift in Sources */,
+				5FBC15871FE519E8008DCCCE /* WeatherStore.swift in Sources */,
 				25E32BA71FE3E10800D471AF /* MapViewController.swift in Sources */,
 				5FAFE5D61FE303EB00FF527A /* MetOfficeAPI.swift in Sources */,
 			);

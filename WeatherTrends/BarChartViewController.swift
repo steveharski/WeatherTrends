@@ -16,10 +16,6 @@ class BarChartViewController: UIViewController {
     
     let weatherData = WeatherData()
     
-   // var metOfficeTest: MetOfficeAPI! // Needs property injection as made on page 359
-    
-    var metOfficeTest = MetOfficeAPI()
-    
     var years: [Double] = [1908, 1909, 1910, 1911, 1912, 1913, 1914]
     
     var temperature: [Double] = [23.4, 28.7, 20.3, 23, 24, 19.5, 21.3]
@@ -28,24 +24,9 @@ class BarChartViewController: UIViewController {
         super.viewDidLoad()
         
         updateChartWithData()
-        
-        self.updateWeatherView(for: "bradford")
-       // weatherData.metOffice.fetchWeatherHistory()
-       // print(weatherData.years)
     }
     
-    func updateWeatherView(for city: String) {
-        metOfficeTest.fetchWeather(for: city) {
-            (weatherResult) in
-            
-            switch weatherResult {
-            case let .success(weather):
-                print(weather)
-            case let .failure(error):
-                print("Error occured: \(error)")
-            }
-        }
-    }
+
     
     func updateChartWithData() {
         var dataEntries: [BarChartDataEntry] = []

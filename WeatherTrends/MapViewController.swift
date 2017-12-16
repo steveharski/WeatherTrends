@@ -15,10 +15,6 @@ class MapViewController: UIViewController {
         performSegue(withIdentifier: "showHistory", sender: sender)
     }
     
-    override func viewDidLoad() {
-        
-    }
-    
     override var shouldAutorotate: Bool {
         return false
     }
@@ -30,7 +26,8 @@ class MapViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "showHistory"?:
-            let historyViewController = segue.destination as! HistoryViewController
+            let tabBarController = segue.destination as! UITabBarController
+            let historyViewController = tabBarController.viewControllers![0] as! HistoryViewController
             if let buttonTitle = (sender as? UIButton)?.currentTitle {
                historyViewController.city = buttonTitle
             }

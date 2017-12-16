@@ -12,6 +12,10 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var city: String?
     
+    let weatherStore = WeatherStore()
+    
+    var weatherHistory = [String]()
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -20,16 +24,41 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.delegate = self
         tableView.dataSource = self
         
+        if city != nil, weatherHistory.isEmpty {
+           self.updateWeatherView(for: city!)
+        }
         
     }
     
+    
+    func updateWeatherView(for city: String) {
+        weatherStore.fetchWeather(for: city) {
+            (weatherResult) in
+            
+            switch weatherResult {
+            case let .success(weather):
+                self.weatherHistory = Weather.weatherForTable(from: weather)
+                self.tableView.reloadData()
+            case let .failure(error):
+                print("Error occured: \(error)")
+            }
+        }
+    }
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return weatherHistory.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "This is row \(indexPath.row)"
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "UITableViewCell")
+        
+        let item = weatherHistory[indexPath.row]
+        
+        cell.textLabel?.text = item
+        cell.textLabel?.textAlignment = .center
         return cell
     }
     
@@ -43,19 +72,14 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = UILabel()
-        header.text = "yyyy mm tmax tmin \n degC degC mm days"
+        header.text = "yyyy  mm   tmax    tmin      af    rain     sun\n                  degC   degC   days  mm hours"
         header.numberOfLines = 0
         header.lineBreakMode = .byWordWrapping
         header.sizeToFit()
         header.textAlignment = .center
-        header.backgroundColor = UIColor.lightGray
+        header.backgroundColor = UIColor.init(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
         return header
     }
-    
-    /*
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "yyyy  mm   tmax    tmin      af    rain     sun"
-    }*/
-    
+        
     
 }

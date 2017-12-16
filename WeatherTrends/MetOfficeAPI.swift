@@ -6,50 +6,12 @@
 //  Copyright © 2017 Steve Harski. All rights reserved.
 //
 
-import UIKit
-
-enum WeatherResult {
-    case success(String)
-    case failure(Error)
-}
-
-enum WeatherError: Error {
-    case weatherCreationError
-}
+import Foundation
 
 class MetOfficeAPI {
     
-    private let session: URLSession = {
-        let config = URLSessionConfiguration.default
-        return URLSession(configuration: config)
-    }()
-    
-    
-    func fetchWeather(for city: String, completion: @escaping (WeatherResult) -> Void) {
-        // city = "bradford"
-        let url = URL(string: "https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/\(city.lowercased())data.txt")
-        var request = URLRequest(url: url!)
-        request.httpMethod = "GET"
-        
-        let task = session.dataTask(with: request) {
-            (data, response, error) in
-            
-            let result = self.processWeatherRequest(data: data, error: error)
-            completion(result)
-        }
-        task.resume()
-    }
-    
-    func processWeatherRequest(data: Data?, error: Error?) -> WeatherResult {
-        guard let weatherData = data, let weather = String(data: weatherData, encoding: .utf8) else {
-            // Couldn't create a weather data
-            if data == nil {
-                return .failure(error!)
-            } else {
-                return .failure(WeatherError.weatherCreationError)
-            }
-        }
-        return .success(weather)
+    static func getURL(for city: String) -> URL? {
+        return URL(string: "https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/\(city.lowercased())data.txt")
     }
     
     
