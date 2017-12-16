@@ -14,5 +14,4 @@ class MetOfficeAPI {
         return URL(string: "https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/\(city.lowercased())data.txt")
     }
     
-    
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class HistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var city: String?
+    var city: String!
     
     let weatherStore = WeatherStore()
     
@@ -23,11 +23,16 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         
         tableView.delegate = self
         tableView.dataSource = self
+        self.tabBarController?.navigationItem.title = city
         
-        if city != nil, weatherHistory.isEmpty {
-           self.updateWeatherView(for: city!)
+        // not sure about this one
+        if let searchedWeather = WeatherStore.cityWeather[city] {
+            print("Getting stored weather")
+            weatherHistory = WeatherFormatter.weatherForTable(from: searchedWeather)
+        } else {
+        print("Fetching weather")
+       self.updateWeatherView(for: city)
         }
-        
     }
     
     
@@ -37,7 +42,8 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
             
             switch weatherResult {
             case let .success(weather):
-                self.weatherHistory = Weather.weatherForTable(from: weather)
+                WeatherStore.cityWeather[city] = weather
+                self.weatherHistory = WeatherFormatter.weatherForTable(from: weather)
                 self.tableView.reloadData()
             case let .failure(error):
                 print("Error occured: \(error)")
@@ -53,7 +59,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "UITableViewCell")
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
         
         let item = weatherHistory[indexPath.row]
         

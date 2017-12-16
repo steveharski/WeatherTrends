@@ -78,6 +78,19 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5w-8o-qL5" customClass="BarChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BLL-aV-Y4R">
+                                        <rect key="frame" x="106" y="518" width="162" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="Cº"/>
+                                            <segment title="af"/>
+                                            <segment title="rain"/>
+                                            <segment title="sun"/>
+                                        </segments>
+                                        <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    </segmentedControl>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -97,7 +110,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USt-Jd-ULN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1454" y="44"/>
+            <point key="canvasLocation" x="1453.5999999999999" y="43.628185907046479"/>
+        </scene>
+        <!--Line Chart-->
+        <scene sceneID="EQm-C4-IAA">
+            <objects>
+                <viewController id="a4M-ZH-2Sl" customClass="LineChartViewController" customModule="WeatherTrends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="APk-vg-TAM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Hd-Vt-hfe" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9Hd-Vt-hfe" firstAttribute="leading" secondItem="anx-70-Lyk" secondAttribute="leading" id="9gL-Od-GuI"/>
+                            <constraint firstItem="anx-70-Lyk" firstAttribute="bottom" secondItem="9Hd-Vt-hfe" secondAttribute="bottom" id="U5D-zy-f5P"/>
+                            <constraint firstItem="anx-70-Lyk" firstAttribute="trailing" secondItem="9Hd-Vt-hfe" secondAttribute="trailing" id="VAD-Gd-ZAP"/>
+                            <constraint firstItem="9Hd-Vt-hfe" firstAttribute="top" secondItem="anx-70-Lyk" secondAttribute="top" id="wHD-Ru-tvu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="anx-70-Lyk"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Line Chart" id="pWa-kc-5pE"/>
+                    <connections>
+                        <outlet property="lineChart" destination="9Hd-Vt-hfe" id="OId-Db-HVe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hSA-X3-OVa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2143" y="44"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="xVY-ue-Fg4">
@@ -111,7 +155,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UITableViewCell" id="9rY-Wz-I8q">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="9rY-Wz-I8q">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9rY-Wz-I8q" id="f2S-e7-Ehy">
@@ -164,12 +208,14 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="RoQ-XD-y6l" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1M4-rj-T8r">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="mez-Ph-Iyp" kind="relationship" relationship="viewControllers" id="Pal-Wo-25F"/>
                         <segue destination="iP0-v5-nUo" kind="relationship" relationship="viewControllers" id="5yP-iJ-SO7"/>
+                        <segue destination="a4M-ZH-2Sl" kind="relationship" relationship="viewControllers" id="eyS-Dp-Zvw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AKw-PM-eZC" userLabel="First Responder" sceneMemberID="firstResponder"/>

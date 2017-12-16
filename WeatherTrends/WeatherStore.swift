@@ -24,6 +24,8 @@ class WeatherStore {
         return URLSession(configuration: config)
     }()
     
+    static var cityWeather = [String:String]()
+    
     func fetchWeather(for city: String, completion: @escaping (WeatherResult) -> Void) {
         let url = MetOfficeAPI.getURL(for: city)
         let request = URLRequest(url: url!) // Consider url when city is new york for example
