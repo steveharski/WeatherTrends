@@ -5,9 +5,18 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Weather Trends-->
         <scene sceneID="d9J-EH-H88">
@@ -76,30 +85,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnZ-eN-ihv">
+                                <rect key="frame" x="289" y="64" width="78" height="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="7" maxX="10" maxY="7"/>
+                                <state key="normal" title="Options">
+                                    <color key="titleColor" red="0.24040704969999999" green="0.48385584349999999" blue="0.68625134229999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="w4z-G3-9fL" kind="presentation" identifier="popOver" id="2i5-Gs-6kJ"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5w-8o-qL5" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BLL-aV-Y4R">
-                                        <rect key="frame" x="106" y="518" width="162" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <segments>
-                                            <segment title="Cº"/>
-                                            <segment title="af"/>
-                                            <segment title="rain"/>
-                                            <segment title="sun"/>
-                                        </segments>
-                                        <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                    </segmentedControl>
-                                </subviews>
+                                <rect key="frame" x="0.0" y="99" width="375" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="I5w-8o-qL5" firstAttribute="leading" secondItem="yUG-Mc-lf4" secondAttribute="leading" id="52e-7Z-6VX"/>
-                            <constraint firstItem="yUG-Mc-lf4" firstAttribute="bottom" secondItem="I5w-8o-qL5" secondAttribute="bottom" id="G2Z-gP-kCv"/>
-                            <constraint firstItem="yUG-Mc-lf4" firstAttribute="trailing" secondItem="I5w-8o-qL5" secondAttribute="trailing" id="XeU-E1-ziL"/>
-                            <constraint firstItem="I5w-8o-qL5" firstAttribute="top" secondItem="yUG-Mc-lf4" secondAttribute="top" id="a7F-BK-dBd"/>
+                            <constraint firstItem="I5w-8o-qL5" firstAttribute="top" secondItem="mnZ-eN-ihv" secondAttribute="bottom" id="2Vv-F6-8wP"/>
+                            <constraint firstItem="yUG-Mc-lf4" firstAttribute="trailing" secondItem="mnZ-eN-ihv" secondAttribute="trailing" constant="8" id="5uD-0K-yYh"/>
+                            <constraint firstItem="yUG-Mc-lf4" firstAttribute="trailing" secondItem="I5w-8o-qL5" secondAttribute="trailing" id="VLq-xz-2Wb"/>
+                            <constraint firstItem="I5w-8o-qL5" firstAttribute="leading" secondItem="yUG-Mc-lf4" secondAttribute="leading" id="Y1j-ME-rFP"/>
+                            <constraint firstItem="mnZ-eN-ihv" firstAttribute="top" secondItem="yUG-Mc-lf4" secondAttribute="top" id="qeK-QU-5Vw"/>
+                            <constraint firstItem="yUG-Mc-lf4" firstAttribute="bottom" secondItem="I5w-8o-qL5" secondAttribute="bottom" id="xaX-Pt-D4o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yUG-Mc-lf4"/>
                     </view>
@@ -121,16 +130,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Hd-Vt-hfe" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="99" width="375" height="519"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZF-be-4Jg">
+                                <rect key="frame" x="289" y="64" width="78" height="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="7" maxX="10" maxY="7"/>
+                                <state key="normal" title="Options">
+                                    <color key="titleColor" red="0.24040704969999999" green="0.48385584349999999" blue="0.68625134229999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="w4z-G3-9fL" kind="presentation" identifier="popOver" id="oiN-p1-sma"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="9Hd-Vt-hfe" firstAttribute="leading" secondItem="anx-70-Lyk" secondAttribute="leading" id="9gL-Od-GuI"/>
-                            <constraint firstItem="anx-70-Lyk" firstAttribute="bottom" secondItem="9Hd-Vt-hfe" secondAttribute="bottom" id="U5D-zy-f5P"/>
-                            <constraint firstItem="anx-70-Lyk" firstAttribute="trailing" secondItem="9Hd-Vt-hfe" secondAttribute="trailing" id="VAD-Gd-ZAP"/>
-                            <constraint firstItem="9Hd-Vt-hfe" firstAttribute="top" secondItem="anx-70-Lyk" secondAttribute="top" id="wHD-Ru-tvu"/>
+                            <constraint firstItem="anx-70-Lyk" firstAttribute="trailing" secondItem="vZF-be-4Jg" secondAttribute="trailing" constant="8" id="73f-uI-E2L"/>
+                            <constraint firstItem="anx-70-Lyk" firstAttribute="bottom" secondItem="9Hd-Vt-hfe" secondAttribute="bottom" id="NGf-oc-fJV"/>
+                            <constraint firstItem="vZF-be-4Jg" firstAttribute="top" secondItem="anx-70-Lyk" secondAttribute="top" id="OmE-Ib-320"/>
+                            <constraint firstItem="anx-70-Lyk" firstAttribute="trailing" secondItem="9Hd-Vt-hfe" secondAttribute="trailing" id="TPh-1I-whQ"/>
+                            <constraint firstItem="9Hd-Vt-hfe" firstAttribute="top" secondItem="vZF-be-4Jg" secondAttribute="bottom" id="Uhd-aP-XNF"/>
+                            <constraint firstItem="9Hd-Vt-hfe" firstAttribute="leading" secondItem="anx-70-Lyk" secondAttribute="leading" id="edd-UI-GuD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="anx-70-Lyk"/>
                     </view>
@@ -141,7 +163,109 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSA-X3-OVa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2143" y="44"/>
+            <point key="canvasLocation" x="2141.5999999999999" y="43.628185907046479"/>
+        </scene>
+        <!--Options Pop Up View Controller-->
+        <scene sceneID="smp-8p-qdW">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="w4z-G3-9fL" customClass="OptionsPopUpViewController" customModule="WeatherTrends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QmJ-QQ-H0N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="188" placeholderIntrinsicHeight="177" translatesAutoresizingMaskIntoConstraints="NO" id="iub-73-r17">
+                                <rect key="frame" x="179" y="94" width="188" height="177"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="8QN-qX-Rhd">
+                                        <rect key="frame" x="18" y="8" width="153" height="164"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgb-VR-6nQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="153" height="32"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <state key="normal" title="max temperature Cº">
+                                                    <color key="titleColor" red="0.23921568630000001" green="0.4823529412" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="chooseOption:" destination="w4z-G3-9fL" eventType="touchUpInside" id="D1f-04-rln"/>
+                                                    <segue destination="hoq-uW-PKp" kind="unwind" unwindAction="unwindFromOptionsVC:" id="fVu-eA-rdT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkE-mN-iPl">
+                                                <rect key="frame" x="0.0" y="33" width="153" height="32"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <state key="normal" title="min temperature Cº">
+                                                    <color key="titleColor" red="0.23921568630000001" green="0.4823529412" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="chooseOption:" destination="w4z-G3-9fL" eventType="touchUpInside" id="NgM-L3-Grq"/>
+                                                    <segue destination="hoq-uW-PKp" kind="unwind" unwindAction="unwindFromOptionsVC:" id="SuZ-0N-sPJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYf-DW-OIK">
+                                                <rect key="frame" x="0.0" y="66" width="153" height="32"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <state key="normal" title="average frost days">
+                                                    <color key="titleColor" red="0.23921568630000001" green="0.4823529412" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="chooseOption:" destination="w4z-G3-9fL" eventType="touchUpInside" id="Uo8-KL-B3g"/>
+                                                    <segue destination="hoq-uW-PKp" kind="unwind" unwindAction="unwindFromOptionsVC:" id="gga-Sl-5m8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njd-Q2-O3J">
+                                                <rect key="frame" x="0.0" y="99" width="153" height="32"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <state key="normal" title="sun days">
+                                                    <color key="titleColor" red="0.23921568630000001" green="0.4823529412" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="chooseOption:" destination="w4z-G3-9fL" eventType="touchUpInside" id="gN7-FT-fpa"/>
+                                                    <segue destination="hoq-uW-PKp" kind="unwind" unwindAction="unwindFromOptionsVC:" id="1mP-uh-WvI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xU-Oi-D9N">
+                                                <rect key="frame" x="0.0" y="132" width="153" height="32"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <state key="normal" title="rain mm">
+                                                    <color key="titleColor" red="0.23921568630000001" green="0.4823529412" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="chooseOption:" destination="w4z-G3-9fL" eventType="touchUpInside" id="w5r-x1-KB4"/>
+                                                    <segue destination="hoq-uW-PKp" kind="unwind" unwindAction="unwindFromOptionsVC:" id="7Qj-uV-Ib7"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96243411302566528" green="0.97679001092910767" blue="0.98949319124221802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="JS2-ZT-nTc"/>
+                                    <constraint firstItem="8QN-qX-Rhd" firstAttribute="top" secondItem="iub-73-r17" secondAttribute="topMargin" id="Op1-YO-wpy"/>
+                                    <constraint firstItem="8QN-qX-Rhd" firstAttribute="centerX" secondItem="iub-73-r17" secondAttribute="centerX" id="gH0-Dm-Zfc"/>
+                                    <constraint firstAttribute="height" constant="177" id="nb4-h7-vcb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LXq-x7-HFf" firstAttribute="trailing" secondItem="iub-73-r17" secondAttribute="trailing" constant="8" id="hX7-un-Ovl"/>
+                            <constraint firstItem="iub-73-r17" firstAttribute="top" secondItem="LXq-x7-HFf" secondAttribute="top" constant="30" id="mPj-Gk-NgM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LXq-x7-HFf"/>
+                    </view>
+                    <connections>
+                        <outletCollection property="options" destination="vkE-mN-iPl" collectionClass="NSMutableArray" id="w6t-ev-d0l"/>
+                        <outletCollection property="options" destination="qgb-VR-6nQ" collectionClass="NSMutableArray" id="xgW-8e-38b"/>
+                        <outletCollection property="options" destination="CYf-DW-OIK" collectionClass="NSMutableArray" id="LTb-ID-uNH"/>
+                        <outletCollection property="options" destination="njd-Q2-O3J" collectionClass="NSMutableArray" id="xhb-Jl-QJt"/>
+                        <outletCollection property="options" destination="5xU-Oi-D9N" collectionClass="NSMutableArray" id="mAj-nP-3lb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dYY-JN-gQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hoq-uW-PKp" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1804" y="818"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="xVY-ue-Fg4">
@@ -226,4 +350,7 @@
     <resources>
         <image name="UK_map(1).png" width="290" height="396"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="2i5-Gs-6kJ"/>
+    </inferredMetricsTieBreakers>
 </document>

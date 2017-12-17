@@ -12,6 +12,7 @@
 		25573DE51FE3F9970031931F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25573DE41FE3F9970031931F /* HistoryViewController.swift */; };
 		25E32BA71FE3E10800D471AF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E32BA61FE3E10800D471AF /* MapViewController.swift */; };
 		5F933DB11FE5ADD8009C8832 /* LineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F933DB01FE5ADD8009C8832 /* LineChartViewController.swift */; };
+		5F9DC7111FE65CB100B09EBE /* OptionsPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9DC7101FE65CB100B09EBE /* OptionsPopUpViewController.swift */; };
 		5FAFE5B41FE2FF4100FF527A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAFE5B31FE2FF4100FF527A /* AppDelegate.swift */; };
 		5FAFE5B91FE2FF4100FF527A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FAFE5B71FE2FF4100FF527A /* Main.storyboard */; };
 		5FAFE5BB1FE2FF4100FF527A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FAFE5BA1FE2FF4100FF527A /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		25E32BA61FE3E10800D471AF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5F6B53F51FE335B60045CCE4 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5F933DB01FE5ADD8009C8832 /* LineChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartViewController.swift; sourceTree = "<group>"; };
+		5F9DC7101FE65CB100B09EBE /* OptionsPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsPopUpViewController.swift; sourceTree = "<group>"; };
 		5FAFE5B01FE2FF4100FF527A /* WeatherTrends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTrends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FAFE5B31FE2FF4100FF527A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FAFE5B81FE2FF4100FF527A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				25573DE41FE3F9970031931F /* HistoryViewController.swift */,
 				5FAFE5D31FE3002700FF527A /* BarChartViewController.swift */,
 				5F933DB01FE5ADD8009C8832 /* LineChartViewController.swift */,
+				5F9DC7101FE65CB100B09EBE /* OptionsPopUpViewController.swift */,
 				5FAFE5B71FE2FF4100FF527A /* Main.storyboard */,
 				5FAFE5D51FE303EB00FF527A /* MetOfficeAPI.swift */,
 				5FBC15861FE519E8008DCCCE /* WeatherStore.swift */,
@@ -235,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F9DC7111FE65CB100B09EBE /* OptionsPopUpViewController.swift in Sources */,
 				5FBC158B1FE52301008DCCCE /* WeatherFormatter.swift in Sources */,
 				5F933DB11FE5ADD8009C8832 /* LineChartViewController.swift in Sources */,
 				5FAFE5B41FE2FF4100FF527A /* AppDelegate.swift in Sources */,

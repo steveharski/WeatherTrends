@@ -25,16 +25,19 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.dataSource = self
         self.tabBarController?.navigationItem.title = city
         
-        // not sure about this one
+        getWeather(for: city)
+    }
+    
+    // MARK: Weather fetching
+    func getWeather(for city: String) {
         if let searchedWeather = WeatherStore.cityWeather[city] {
             print("Getting stored weather")
             weatherHistory = WeatherFormatter.weatherForTable(from: searchedWeather)
         } else {
-        print("Fetching weather")
-       self.updateWeatherView(for: city)
+            print("Fetching weather")
+            self.updateWeatherView(for: city)
         }
     }
-    
     
     func updateWeatherView(for city: String) {
         weatherStore.fetchWeather(for: city) {
@@ -53,7 +56,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     
-    
+    // MARK: Table set up
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return weatherHistory.count
     }
@@ -78,6 +81,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = UILabel()
+        // CHANGE IT!
         header.text = "yyyy  mm   tmax    tmin      af    rain     sun\n                  degC   degC   days  mm hours"
         header.numberOfLines = 0
         header.lineBreakMode = .byWordWrapping

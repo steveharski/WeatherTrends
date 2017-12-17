@@ -114,7 +114,22 @@ class WeatherFormatter {
         return averageValues
     }
     
-    
+    static func getWeatherKey(from label: String) -> String? {
+        switch label {
+        case "max temperature Cº":
+            return "tmax"
+        case "min temperature Cº":
+            return "tmin"
+        case "average frost days":
+            return "af"
+        case "rain mm":
+            return "rain"
+        case "sun days":
+            return "sun"
+        default:
+            return nil
+        }
+    }
     
     
     

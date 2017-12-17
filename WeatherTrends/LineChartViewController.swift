@@ -19,47 +19,63 @@ class LineChartViewController: UIViewController {
         }
     }
     
+    var yAxisLabel: String? {
+        didSet {
+            if let key = WeatherFormatter.getWeatherKey(from: self.yAxisLabel!) {
+                updateChart(yAxisKey: key, label: self.yAxisLabel!)
+            }
+        }
+    }
+    
+    var defaultYAxis = "max temperature Cº"
+    
     var weatherDictionary = [String:[Double]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tabBarController?.navigationItem.title = city
-        weatherDictionary = WeatherFormatter.weatherForChart(from: WeatherStore.cityWeather[city]!)
         
-        updateChartTest()
-        
-    }
-    
-    var numbers: [Double] = [11,22,33,44,55,66,77,88,99,111,222,333,444,555,666,777,888,999]
-    
-    func updateChartTest() {
-        var lineChartEntry = [ChartDataEntry]()
-        for i in 0..<numbers.count {
-            let value = ChartDataEntry(x: Double(i), y: numbers[i])
-            lineChartEntry.append(value)
+        if let searchedWeather = WeatherStore.cityWeather[city] {
+            weatherDictionary = WeatherFormatter.weatherForChart(from: searchedWeather)
         }
-        let line1 = LineChartDataSet(values: lineChartEntry, label: "Number")
-        line1.colors = [NSUIColor.blue]
         
-        let data = LineChartData()
-        data.addDataSet(line1)
-        
-        lineChart.data = data
-        lineChart.chartDescription?.text = "Description"
+        yAxisLabel = defaultYAxis
     }
     
-    func updateChartWithData() {
+    
+    func updateChart(yAxisKey: String, label: String) {
         
-        if let years = weatherDictionary["years"], let temperature = weatherDictionary["tmax"] {
+        if let years = weatherDictionary["years"],
+            let yAxisValues = weatherDictionary[yAxisKey] {
             var dataEntries: [ChartDataEntry] = []
             for i in 0..<years.count {
-                let dataEntry = ChartDataEntry(x: years[i], y: temperature[i])
+                let dataEntry = ChartDataEntry(x: years[i], y: yAxisValues[i])
                 dataEntries.append(dataEntry)
             }
-            let chartDataSet = LineChartDataSet(values: dataEntries, label: "Year")
+            let chartDataSet = LineChartDataSet(values: dataEntries, label: label)
             let chartData = LineChartData(dataSet: chartDataSet)
             lineChart.data = chartData
+        }
+    }
+    
+    
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "popOver"?:
+            let destination = segue.destination as! OptionsPopUpViewController
+            destination.chosenOption = yAxisLabel
+        default:
+            preconditionFailure("Unexpected segue identifier")
+        }
+    }
+ 
+    @IBAction func unwindFromOptionsVC(_ sender: UIStoryboardSegue) {
+        if sender.source is OptionsPopUpViewController {
+            if let senderVC = sender.source as? OptionsPopUpViewController {
+                self.yAxisLabel = senderVC.chosenOption
+            }
         }
     }
     
