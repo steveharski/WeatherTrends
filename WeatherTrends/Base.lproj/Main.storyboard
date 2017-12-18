@@ -26,28 +26,117 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UK_map(1).png" translatesAutoresizingMaskIntoConstraints="NO" id="G7V-Jk-gKl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UK-map" translatesAutoresizingMaskIntoConstraints="NO" id="G7V-Jk-gKl">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a location from the map" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nmE-hT-O9U">
-                                <rect key="frame" x="0.0" y="643" width="375" height="24"/>
-                                <color key="textColor" red="0.061270621827411165" green="0.0091655220025981966" blue="0.0005293649088306925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFp-12-udT">
-                                <rect key="frame" x="262" y="357" width="71" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Bradford">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZA-1d-qvm">
+                                <rect key="frame" x="70" y="457" width="71" height="30"/>
+                                <state key="normal" title="Aberporth">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWeather:" destination="RgF-0I-m0t" eventType="touchUpInside" id="uRT-HV-qOT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPy-VG-AF6">
+                                <rect key="frame" x="151" y="173" width="58" height="30"/>
+                                <state key="normal" title="Braemar">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWeather:" destination="RgF-0I-m0t" eventType="touchUpInside" id="O5L-oz-AAc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMN-uN-87S">
+                                <rect key="frame" x="16" y="193" width="35" height="30"/>
+                                <state key="normal" title="Tiree">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWeather:" destination="RgF-0I-m0t" eventType="touchUpInside" id="QbT-5M-77S"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2e-VG-d1z">
+                                <rect key="frame" x="28" y="316" width="54" height="30"/>
+                                <state key="normal" title="Armagh">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWeather:" destination="RgF-0I-m0t" eventType="touchUpInside" id="Ni3-kM-fDP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHM-Rm-V6Q">
+                                <rect key="frame" x="122" y="378" width="72" height="30"/>
+                                <state key="normal" title="Ringway">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWeather:" destination="RgF-0I-m0t" eventType="touchUpInside" id="MMf-UV-PMD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBJ-Qf-l8d">
+                                <rect key="frame" x="203" y="89" width="86" height="30"/>
+                                <state key="normal" title="Wick Airport">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWeather:" destination="RgF-0I-m0t" eventType="touchUpInside" id="BJ2-wp-rDn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFp-12-udT">
+                                <rect key="frame" x="261" y="342" width="55" height="30"/>
+                                <state key="normal" title="Durham">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="showWeather:" destination="RgF-0I-m0t" eventType="touchUpInside" id="0Q0-ZB-d4t"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jY1-wz-5fA">
-                                <rect key="frame" x="239" y="472" width="71" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuR-gK-inh">
+                                <rect key="frame" x="153" y="489" width="119" height="30"/>
+                                <state key="normal" title="Yeovilton">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWeather:" destination="RgF-0I-m0t" eventType="touchUpInside" id="Nwe-ZW-TpL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sgP-Ra-eut">
+                                <rect key="frame" x="271" y="573" width="79" height="30"/>
+                                <state key="normal" title="Eastbourne">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWeather:" destination="RgF-0I-m0t" eventType="touchUpInside" id="zHo-rh-lcO"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select a location from the map" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nmE-hT-O9U">
+                                <rect key="frame" x="54" y="623" width="267" height="24"/>
+                                <color key="textColor" red="0.061270621827411165" green="0.0091655220025981966" blue="0.0005293649088306925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1Y-Pn-cLq">
+                                <rect key="frame" x="58" y="555" width="62" height="30"/>
+                                <state key="normal" title="Chivenor">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWeather:" destination="RgF-0I-m0t" eventType="touchUpInside" id="AHJ-6A-d1W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOi-0G-z2I">
+                                <rect key="frame" x="137" y="282" width="72" height="30"/>
+                                <state key="normal" title="Paisley">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showWeather:" destination="RgF-0I-m0t" eventType="touchUpInside" id="Lpq-Da-NRF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jY1-wz-5fA">
+                                <rect key="frame" x="287" y="462" width="47" height="30"/>
                                 <state key="normal" title="Oxford">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -58,13 +147,47 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="LPy-VG-AF6" firstAttribute="top" secondItem="nBJ-Qf-l8d" secondAttribute="bottom" constant="54" id="0c4-Sd-CbI"/>
                             <constraint firstItem="shX-k0-ybv" firstAttribute="trailing" secondItem="G7V-Jk-gKl" secondAttribute="trailing" id="4Tu-NU-xG9"/>
-                            <constraint firstItem="nmE-hT-O9U" firstAttribute="leading" secondItem="shX-k0-ybv" secondAttribute="leading" id="6In-ZI-oua"/>
-                            <constraint firstItem="shX-k0-ybv" firstAttribute="trailing" secondItem="nmE-hT-O9U" secondAttribute="trailing" id="7hP-we-mOw"/>
+                            <constraint firstItem="shX-k0-ybv" firstAttribute="bottom" secondItem="nmE-hT-O9U" secondAttribute="bottom" constant="20" id="4cw-Jf-jK5"/>
+                            <constraint firstItem="EMN-uN-87S" firstAttribute="top" secondItem="shX-k0-ybv" secondAttribute="top" constant="129" id="4uC-7b-sGd"/>
+                            <constraint firstItem="jY1-wz-5fA" firstAttribute="leading" secondItem="xZA-1d-qvm" secondAttribute="trailing" constant="146" id="5c3-S7-PiU"/>
+                            <constraint firstItem="MFp-12-udT" firstAttribute="leading" secondItem="R2e-VG-d1z" secondAttribute="trailing" constant="179" id="77R-Kr-cD6"/>
+                            <constraint firstItem="nBJ-Qf-l8d" firstAttribute="top" secondItem="shX-k0-ybv" secondAttribute="top" constant="25" id="8d7-J1-te0"/>
+                            <constraint firstItem="XOi-0G-z2I" firstAttribute="top" secondItem="LPy-VG-AF6" secondAttribute="bottom" constant="79" id="A1O-xa-TSy"/>
+                            <constraint firstItem="xZA-1d-qvm" firstAttribute="leading" secondItem="shX-k0-ybv" secondAttribute="leading" constant="70" id="GSJ-oy-wKX"/>
+                            <constraint firstItem="PHM-Rm-V6Q" firstAttribute="top" secondItem="XOi-0G-z2I" secondAttribute="bottom" constant="66" id="GSg-zo-S5N"/>
                             <constraint firstItem="G7V-Jk-gKl" firstAttribute="leading" secondItem="shX-k0-ybv" secondAttribute="leading" id="NyH-oC-Twf"/>
-                            <constraint firstItem="nmE-hT-O9U" firstAttribute="bottom" secondItem="shX-k0-ybv" secondAttribute="bottom" id="Rtg-PU-MUc"/>
+                            <constraint firstItem="PHM-Rm-V6Q" firstAttribute="leading" secondItem="shX-k0-ybv" secondAttribute="leading" constant="122" id="Txx-ul-0Ht"/>
+                            <constraint firstItem="jY1-wz-5fA" firstAttribute="leading" secondItem="xZA-1d-qvm" secondAttribute="trailing" constant="146" id="UOX-Ge-WPM"/>
+                            <constraint firstItem="sgP-Ra-eut" firstAttribute="leading" secondItem="K1Y-Pn-cLq" secondAttribute="trailing" constant="151" id="V6y-ph-Phu"/>
+                            <constraint firstItem="XOi-0G-z2I" firstAttribute="leading" secondItem="shX-k0-ybv" secondAttribute="leading" constant="137" id="XuU-Xf-uHd"/>
+                            <constraint firstItem="R2e-VG-d1z" firstAttribute="top" secondItem="EMN-uN-87S" secondAttribute="bottom" constant="93" id="afO-eh-fpO"/>
+                            <constraint firstItem="WuR-gK-inh" firstAttribute="leading" secondItem="shX-k0-ybv" secondAttribute="leading" constant="153" id="aq4-TC-6I3"/>
+                            <constraint firstItem="sgP-Ra-eut" firstAttribute="top" secondItem="jY1-wz-5fA" secondAttribute="bottom" constant="81" id="cCd-L7-7XC"/>
+                            <constraint firstItem="jY1-wz-5fA" firstAttribute="leading" secondItem="WuR-gK-inh" secondAttribute="trailing" constant="15" id="cGY-yy-ykk"/>
                             <constraint firstItem="shX-k0-ybv" firstAttribute="bottom" secondItem="G7V-Jk-gKl" secondAttribute="bottom" id="dbM-ky-tCu"/>
+                            <constraint firstItem="shX-k0-ybv" firstAttribute="trailing" secondItem="MFp-12-udT" secondAttribute="trailing" constant="59" id="e3c-OG-EeF"/>
+                            <constraint firstItem="nmE-hT-O9U" firstAttribute="top" secondItem="K1Y-Pn-cLq" secondAttribute="bottom" constant="38" id="e6G-Y7-tic"/>
+                            <constraint firstItem="MFp-12-udT" firstAttribute="leading" secondItem="R2e-VG-d1z" secondAttribute="trailing" constant="179" id="ej4-jv-KZh"/>
+                            <constraint firstItem="shX-k0-ybv" firstAttribute="trailing" secondItem="nBJ-Qf-l8d" secondAttribute="trailing" constant="86" id="hT5-za-SQ6"/>
+                            <constraint firstItem="shX-k0-ybv" firstAttribute="trailing" secondItem="jY1-wz-5fA" secondAttribute="trailing" constant="41" id="i8M-JG-h9v"/>
                             <constraint firstItem="G7V-Jk-gKl" firstAttribute="top" secondItem="shX-k0-ybv" secondAttribute="top" id="lVl-93-ulJ"/>
+                            <constraint firstItem="LPy-VG-AF6" firstAttribute="leading" secondItem="EMN-uN-87S" secondAttribute="trailing" constant="100" id="laD-4J-zMh"/>
+                            <constraint firstItem="nmE-hT-O9U" firstAttribute="top" secondItem="sgP-Ra-eut" secondAttribute="bottom" constant="20" id="les-Pa-hxZ"/>
+                            <constraint firstItem="nmE-hT-O9U" firstAttribute="leading" secondItem="shX-k0-ybv" secondAttribute="leading" constant="54" id="lhL-NJ-yv0"/>
+                            <constraint firstItem="K1Y-Pn-cLq" firstAttribute="leading" secondItem="shX-k0-ybv" secondAttribute="leading" constant="58" id="onh-yT-uw0"/>
+                            <constraint firstItem="EMN-uN-87S" firstAttribute="leading" secondItem="shX-k0-ybv" secondAttribute="leading" constant="16" id="oo5-qd-Lbj"/>
+                            <constraint firstItem="R2e-VG-d1z" firstAttribute="leading" secondItem="shX-k0-ybv" secondAttribute="leading" constant="28" id="pGF-7I-HNa"/>
+                            <constraint firstItem="shX-k0-ybv" firstAttribute="trailing" secondItem="XOi-0G-z2I" secondAttribute="trailing" constant="166" id="rns-ca-WJu"/>
+                            <constraint firstItem="nmE-hT-O9U" firstAttribute="top" secondItem="WuR-gK-inh" secondAttribute="bottom" constant="104" id="sCb-o2-Yye"/>
+                            <constraint firstItem="shX-k0-ybv" firstAttribute="trailing" secondItem="sgP-Ra-eut" secondAttribute="trailing" constant="25" id="t2P-bv-6fA"/>
+                            <constraint firstItem="shX-k0-ybv" firstAttribute="trailing" secondItem="PHM-Rm-V6Q" secondAttribute="trailing" constant="181" id="t53-St-ajO"/>
+                            <constraint firstItem="shX-k0-ybv" firstAttribute="trailing" secondItem="nmE-hT-O9U" secondAttribute="trailing" constant="54" id="tEk-wK-4MD"/>
+                            <constraint firstItem="shX-k0-ybv" firstAttribute="trailing" secondItem="LPy-VG-AF6" secondAttribute="trailing" constant="166" id="tm5-3C-YGM"/>
+                            <constraint firstItem="sgP-Ra-eut" firstAttribute="leading" secondItem="K1Y-Pn-cLq" secondAttribute="trailing" constant="151" id="v2H-Gc-Ffs"/>
+                            <constraint firstItem="K1Y-Pn-cLq" firstAttribute="top" secondItem="xZA-1d-qvm" secondAttribute="bottom" constant="68" id="z16-7Q-pTA"/>
+                            <constraint firstItem="MFp-12-udT" firstAttribute="top" secondItem="nBJ-Qf-l8d" secondAttribute="bottom" constant="223" id="znK-UE-FTc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="shX-k0-ybv"/>
                     </view>
@@ -112,7 +235,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yUG-Mc-lf4"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Bar Chart" id="OBl-CY-vRp"/>
+                    <tabBarItem key="tabBarItem" title="Bar Chart" image="bar_chart" id="OBl-CY-vRp"/>
                     <connections>
                         <outlet property="barChart" destination="I5w-8o-qL5" id="blM-sv-zwa"/>
                     </connections>
@@ -156,7 +279,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="anx-70-Lyk"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Line Chart" id="pWa-kc-5pE"/>
+                    <tabBarItem key="tabBarItem" title="Line Chart" image="line_chart" id="pWa-kc-5pE"/>
                     <connections>
                         <outlet property="lineChart" destination="9Hd-Vt-hfe" id="OId-Db-HVe"/>
                     </connections>
@@ -265,9 +388,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYY-JN-gQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hoq-uW-PKp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1804" y="818"/>
+            <point key="canvasLocation" x="1798" y="898"/>
         </scene>
-        <!--History View Controller-->
+        <!--History-->
         <scene sceneID="xVY-ue-Fg4">
             <objects>
                 <viewController id="mez-Ph-Iyp" customClass="HistoryViewController" customModule="WeatherTrends" customModuleProvider="target" sceneMemberID="viewController">
@@ -299,7 +422,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mZL-ZU-Cjj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="fbF-pZ-WOu"/>
+                    <tabBarItem key="tabBarItem" title="History" image="menu" selectedImage="menu" id="fbF-pZ-WOu"/>
                     <connections>
                         <outlet property="tableView" destination="xBS-gP-zFz" id="HMq-yg-vxh"/>
                     </connections>
@@ -344,11 +467,14 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AKw-PM-eZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="762" y="-778"/>
+            <point key="canvasLocation" x="761" y="-875"/>
         </scene>
     </scenes>
     <resources>
-        <image name="UK_map(1).png" width="290" height="396"/>
+        <image name="UK-map" width="387" height="547"/>
+        <image name="bar_chart" width="30" height="30"/>
+        <image name="line_chart" width="30" height="30"/>
+        <image name="menu" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2i5-Gs-6kJ"/>

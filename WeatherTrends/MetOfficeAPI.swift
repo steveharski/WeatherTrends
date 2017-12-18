@@ -11,7 +11,20 @@ import Foundation
 class MetOfficeAPI {
     
     static func getURL(for city: String) -> URL? {
-        return URL(string: "https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/\(city.lowercased())data.txt")
+        let formattedCity = self.formatCity(from: city)
+        return URL(string: "https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/\(formattedCity)data.txt")
     }
     
+    // Format city as expected in url
+    private static func formatCity(from cityToFormat: String) -> String {
+        var city = cityToFormat.lowercased()
+        for character in city {
+            if character == "-" {
+                city.remove(at: city.index(of: "-")!)
+            } else if character == " " {
+                city.remove(at: city.index(of: " ")!)
+            }
+        }
+        return city
+    }
 }

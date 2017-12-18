@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25573DE21FE3F2470031931F /* UK_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 25573DE01FE3F2460031931F /* UK_map.png */; };
-		25573DE31FE3F2470031931F /* UK_map(1).png in Resources */ = {isa = PBXBuildFile; fileRef = 25573DE11FE3F2460031931F /* UK_map(1).png */; };
 		25573DE51FE3F9970031931F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25573DE41FE3F9970031931F /* HistoryViewController.swift */; };
 		25E32BA71FE3E10800D471AF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E32BA61FE3E10800D471AF /* MapViewController.swift */; };
 		5F933DB11FE5ADD8009C8832 /* LineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F933DB01FE5ADD8009C8832 /* LineChartViewController.swift */; };
@@ -54,8 +52,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		25573DE01FE3F2460031931F /* UK_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = UK_map.png; path = maps/UK_map.png; sourceTree = "<group>"; };
-		25573DE11FE3F2460031931F /* UK_map(1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UK_map(1).png"; path = "maps/UK_map(1).png"; sourceTree = "<group>"; };
 		25573DE41FE3F9970031931F /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		25E32BA61FE3E10800D471AF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5F6B53F51FE335B60045CCE4 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -132,8 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				5FAFE5B31FE2FF4100FF527A /* AppDelegate.swift */,
-				25573DE01FE3F2460031931F /* UK_map.png */,
-				25573DE11FE3F2460031931F /* UK_map(1).png */,
 				5FAFE5BA1FE2FF4100FF527A /* Assets.xcassets */,
 				5FAFE5BC1FE2FF4100FF527A /* LaunchScreen.storyboard */,
 			);
@@ -224,9 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FAFE5BE1FE2FF4100FF527A /* LaunchScreen.storyboard in Resources */,
-				25573DE31FE3F2470031931F /* UK_map(1).png in Resources */,
 				5FAFE5BB1FE2FF4100FF527A /* Assets.xcassets in Resources */,
-				25573DE21FE3F2470031931F /* UK_map.png in Resources */,
 				5FAFE5B91FE2FF4100FF527A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,7 +28,7 @@ class WeatherStore {
     
     func fetchWeather(for city: String, completion: @escaping (WeatherResult) -> Void) {
         let url = MetOfficeAPI.getURL(for: city)
-        let request = URLRequest(url: url!) // Consider url when city is new york for example
+        let request = URLRequest(url: url!)
         
         let task = session.dataTask(with: request) {
             (data, response, error) in
@@ -42,7 +42,6 @@ class WeatherStore {
     
     func processWeatherRequest(data: Data?, error: Error?) -> WeatherResult {
         guard let weatherData = data, let weather = String(data: weatherData, encoding: .utf8) else {
-            // Couldn't create a weather data
             if data == nil {
                 return .failure(error!)
             } else {

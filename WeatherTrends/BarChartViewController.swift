@@ -37,7 +37,6 @@ class BarChartViewController: UIViewController {
         
         self.tabBarController?.navigationItem.title = city
         
-        // Check if weather is fetched already
         if let searchedWeather = WeatherStore.cityWeather[city] {
         weatherDictionary = WeatherFormatter.weatherForChart(from: searchedWeather)
         }
@@ -45,7 +44,7 @@ class BarChartViewController: UIViewController {
         yAxisLabel = defaultYAxis
     }
     
-    
+    // MARK: SetUp
     func updateChart(yAxisKey: String, label: String) {
         
         if let years = weatherDictionary["years"],
@@ -56,8 +55,12 @@ class BarChartViewController: UIViewController {
                 dataEntries.append(dataEntry)
             }
             let chartDataSet = BarChartDataSet(values: dataEntries, label: label)
+            chartDataSet.colors = [WeatherFormatter.getChartColor(for: label) as NSUIColor]
             let chartData = BarChartData(dataSet: chartDataSet)
             barChart.data = chartData
+            barChart.chartDescription?.text = ""
+            barChart.xAxis.labelPosition = .bottom
+            barChart.animate(xAxisDuration: 0.5, yAxisDuration: 0.5)
         }
     }
     

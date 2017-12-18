@@ -21,7 +21,7 @@ class OptionsPopUpViewController: UIViewController, UIGestureRecognizerDelegate 
     
     @IBOutlet var options: [UIButton]!
     
-    // MARK: overriding view functions
+    
     override func viewWillAppear(_ animated: Bool) {
         updateSelectedOption()
     }
@@ -38,7 +38,7 @@ class OptionsPopUpViewController: UIViewController, UIGestureRecognizerDelegate 
         self.view.window!.removeGestureRecognizer(tapBGGesture)
     }
     
-    // MARK: class functions
+    
     @objc func tapBG(sender: UITapGestureRecognizer){
         dismiss(animated: true, completion: nil)
     }

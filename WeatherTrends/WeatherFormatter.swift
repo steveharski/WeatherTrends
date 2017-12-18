@@ -7,44 +7,59 @@
 //
 
 import Foundation
+import UIKit
 
 class WeatherFormatter {
     
+    // MARK: Table
     static func weatherForTable(from fetchedWeather: String) -> [String] {
         
-        let seperatedFetchedWeather = fetchedWeather.components(separatedBy: "hours")
-        let weatherValues = seperatedFetchedWeather[seperatedFetchedWeather.count - 1]
+        // Separate header and weather history
+        let separatedFetchedWeather = fetchedWeather.components(separatedBy: "hours")
+        let weatherValues = separatedFetchedWeather[separatedFetchedWeather.count - 1]
         
-        var seperatedWeatherValues = weatherValues.components(separatedBy: "\n")
-        seperatedWeatherValues.remove(at: 0)
+        var separatedWeatherValues = weatherValues.components(separatedBy: "\n")
+        separatedWeatherValues.remove(at: 0)
         
-        /*
-        var trimmedWeather = [String]()
-        for yearMonthValues in seperatedWeatherValues {
-            let trimmedValue = yearMonthValues.trimmingCharacters(in: .whitespaces)
-            trimmedWeather.append(trimmedValue)
+        
+        for i in separatedWeatherValues.indices {
+            var row = separatedWeatherValues[i]
+            // Remove "*" nad "#" from a row
+            for character in row {
+                if character == "*" {
+                    row.remove(at: row.index(of: "*")!)
+                } else if character == "#" {
+                    row.remove(at: row.index(of: "#")!)
+                }
+            }
+            // Remove 'Provisional' from a row
+            if row.contains("Provisional") {
+                row.removeSubrange(row.range(of: "Provisional")!)
+            }
+            separatedWeatherValues[i] = row
         }
-        return trimmedWeather*/
-       return seperatedWeatherValues
+        
+       return separatedWeatherValues
     }
     
     
+    // MARK: Charts
     static func weatherForChart(from fetchedWeather: String) -> [String:[Double]] {
         let tableWeather = weatherForTable(from: fetchedWeather)
         
         var weatherValues = [String]()
         
+        // Break up rows for separate values
+        // Remove occurance of '\r'
         for valuesRow in tableWeather {
             let valuesArray = valuesRow.components(separatedBy: " ")
             for var component in valuesArray {
-                if component.count != 0 && component.count < 10 {
-                    if component.contains("*") {
-                        component.remove(at: component.index(of: "*")!)
+                if component.contains("\r") {
+                        component.remove(at: component.index(of: "\r")!)
                     }
                     weatherValues.append(component)
                 }
             }
-        }
         
          var years = [Double]()
          var tMax = [Double]()
@@ -55,7 +70,11 @@ class WeatherFormatter {
          
         var counter = 1
         
+        // Store values into arrays by its meaning
         for i in weatherValues.indices {
+            
+            if weatherValues[i].count != 0 {
+    
             switch counter {
             case 1:
                 if let year = Double(weatherValues[i]) {
@@ -82,6 +101,7 @@ class WeatherFormatter {
             counter += 1
             if counter > 7 {
                 counter = 1
+            }
             }
         }
         
@@ -131,6 +151,23 @@ class WeatherFormatter {
         }
     }
     
+    // MARK: Charts colors
+    static func getChartColor(for label: String) -> UIColor {
+        switch label {
+        case "max temperature Cº":
+            return #colorLiteral(red: 0.8640807271, green: 0.3032546937, blue: 0.09520091861, alpha: 1)
+        case "min temperature Cº":
+            return #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        case "average frost days":
+            return #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        case "rain mm":
+            return #colorLiteral(red: 0.6642242074, green: 0.6642400622, blue: 0.6642315388, alpha: 1)
+        case "sun days":
+            return #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        default:
+            return #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+        }
+    }
     
     
     

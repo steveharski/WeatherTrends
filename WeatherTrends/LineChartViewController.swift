@@ -43,7 +43,7 @@ class LineChartViewController: UIViewController {
         yAxisLabel = defaultYAxis
     }
     
-    
+    // MARK: SetUp
     func updateChart(yAxisKey: String, label: String) {
         
         if let years = weatherDictionary["years"],
@@ -54,8 +54,12 @@ class LineChartViewController: UIViewController {
                 dataEntries.append(dataEntry)
             }
             let chartDataSet = LineChartDataSet(values: dataEntries, label: label)
+            chartDataSet.colors = [WeatherFormatter.getChartColor(for: label) as NSUIColor]
             let chartData = LineChartData(dataSet: chartDataSet)
             lineChart.data = chartData
+            lineChart.chartDescription?.text = ""
+            lineChart.xAxis.labelPosition = .bottom
+            lineChart.animate(xAxisDuration: 0.5, yAxisDuration: 0.5)
         }
     }
     

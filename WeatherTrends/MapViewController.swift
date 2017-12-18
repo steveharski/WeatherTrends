@@ -15,6 +15,7 @@ class MapViewController: UIViewController {
         performSegue(withIdentifier: "showHistory", sender: sender)
     }
     
+    // MARK: Rotation
     override var shouldAutorotate: Bool {
         return false
     }
@@ -23,6 +24,8 @@ class MapViewController: UIViewController {
         return .portrait
     }
     
+    
+    // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "showHistory"?:
